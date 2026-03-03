@@ -194,19 +194,20 @@
     </footer>
     
     <script>
-        // 页面加载时从本地存储读取图片
+        // 页面加载时检查是否有图片
         window.onload = function() {
+            // 检查是否存在本地存储的图片
             const savedPhoto = localStorage.getItem('personalPhoto');
             if (savedPhoto) {
                 const uploadContainer = document.querySelector('.upload-container');
                 uploadContainer.innerHTML = `
-                    <img src="${savedPhoto}" style="max-width: 200px; max-height: 200px; border-radius: 50%; margin-bottom: 20px;">
-                    <p>图片已上传，可点击重新选择</p>
-                    <input type="file" class="upload-input" id="photo-upload">
-                    <label for="photo-upload" class="upload-label">
-                        <span class="upload-button">重新选择</span>
-                    </label>
-                `;
+                        <img src="images/personal.jpg.jpg" style="max-width: 200px; max-height: 200px; border-radius: 50%; margin-bottom: 20px;">
+                        <p>图片已设置为相对路径：images/personal.jpg.jpg</p>
+                        <input type="file" class="upload-input" id="photo-upload">
+                        <label for="photo-upload" class="upload-label">
+                            <span class="upload-button">重新选择</span>
+                        </label>
+                    `;
                 // 重新绑定事件
                 document.getElementById('photo-upload').addEventListener('change', handlePhotoUpload);
             }
@@ -224,8 +225,8 @@
                     
                     const uploadContainer = document.querySelector('.upload-container');
                     uploadContainer.innerHTML = `
-                        <img src="${imageData}" style="max-width: 200px; max-height: 200px; border-radius: 50%; margin-bottom: 20px;">
-                        <p>图片已上传，可点击重新选择</p>
+                        <img src="images/personal.jpg.jpg" style="max-width: 200px; max-height: 200px; border-radius: 50%; margin-bottom: 20px;">
+                        <p>图片已设置为相对路径：images/personal.jpg.jpg</p>
                         <input type="file" class="upload-input" id="photo-upload">
                         <label for="photo-upload" class="upload-label">
                             <span class="upload-button">重新选择</span>
