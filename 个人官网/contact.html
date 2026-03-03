@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系方式 - 个人官网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏 */
+        nav {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* 页面内容 */
+        .page-content {
+            padding: 60px 0;
+        }
+        
+        .page-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item label {
+            width: 120px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .contact-item p {
+            color: #666;
+        }
+        
+        .cta-section {
+            text-align: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        /* 底部版权 */
+        footer {
+            background-color: #f8f9fa;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 60px;
+        }
+        
+        .copyright {
+            color: #666;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .contact-item label {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <!-- 此处填写 logo -->
+            </div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="about.html">关于我</a>
+                <a href="services.html">核心服务</a>
+                <a href="portfolio.html">案例展示</a>
+                <a href="contact.html">联系方式</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 页面内容 -->
+    <section class="page-content">
+        <div class="container">
+            <h1 class="page-title">联系方式</h1>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <!-- 联系方式1 -->
+                    <div class="contact-item">
+                        <label>邮箱：</label>
+                        <p>2331563069@qq.com</p>
+                    </div>
+                    
+                    <!-- 联系方式2 -->
+                    <div class="contact-item">
+                        <label>电话：</label>
+                        <p>110</p>
+                    </div>
+                    
+                    <!-- 联系方式3 -->
+                    <div class="contact-item">
+                        <label>微信：</label>
+                        <p>WeChat</p>
+                    </div>
+                    
+                    <!-- 联系方式4 -->
+                    <div class="contact-item">
+                        <label>地址：</label>
+                        <p>白宫</p>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <a href="#" class="cta-button">立即联系</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 底部版权 -->
+    <footer>
+        <div class="container">
+            <div class="copyright">©【2026】【周茂林】- 亚马逊运营个人官网 | 专注跨境，诚信服务</div>
+        </div>
+    </footer>
+</body>
+</html>
