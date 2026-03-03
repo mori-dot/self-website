@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - 个人官网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏 */
+        nav {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* 页面内容 */
+        .page-content {
+            padding: 60px 0;
+        }
+        
+        .page-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .personal-info {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .personal-info h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .personal-info p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .core-advantages {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .core-advantages h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .advantage-list {
+            list-style: none;
+        }
+        
+        .advantage-list li {
+            margin-bottom: 15px;
+            color: #666;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .advantage-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        /* 底部版权 */
+        footer {
+            background-color: #f8f9fa;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 60px;
+        }
+        
+        .copyright {
+            color: #666;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <!-- 此处填写 logo -->
+            </div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="about.html">关于我</a>
+                <a href="services.html">核心服务</a>
+                <a href="portfolio.html">案例展示</a>
+                <a href="contact.html">联系方式</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 页面内容 -->
+    <section class="page-content">
+        <div class="container">
+            <h1 class="page-title">关于我</h1>
+            
+            <div class="about-content">
+                <!-- 个人简介 -->
+                <div class="personal-info">
+                    <h2>个人简介</h2>
+                    <p>深耕亚马逊跨境运营，专注家具类目，擅长亚马逊各站点精细化运营、Listing优化与关键词布局、PPC广告投放与优化，曾助力多家中小卖家实现店铺月销从0到1万的突破，始终坚持“专业落地、诚信共赢”的服务理念，帮卖家避开运营坑，高效起店。</p>
+                    
+                </div>
+                
+                <!-- 核心优势 -->
+                <div class="core-advantages">
+                    <h2>核心优势</h2>
+                    <ul class="advantage-list">
+                        <li>【“全链路运营能力”】→ 从选品、Listing撰写优化，到广告投放、售后跟进，全程覆盖，无需卖家额外对接多个岗位。</li>
+                        <li>【“数据驱动运营”】→ 依托亚马逊后台数据，精准分析市场趋势、竞品动态，优化运营策略，拒绝盲目操作。</li>
+                        <li>【“高效响应服务”】→ 一对一对接，及时同步店铺运营进度，快速解决运营过程中的各类问题。</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 底部版权 -->
+    <footer>
+        <div class="container">
+            <div class="copyright">©【2026】【周茂林】- 亚马逊运营个人官网 | 专注跨境，诚信服务</div>
+        </div>
+    </footer>
+</body>
+</html>

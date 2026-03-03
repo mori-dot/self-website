@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人官网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏 */
+        nav {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* 主体内容 */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .hero .tagline {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #666;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        /* 个人照片上传区域 */
+        .photo-upload {
+            margin: 40px 0;
+        }
+        
+        .upload-container {
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .upload-container:hover {
+            border-color: #333;
+        }
+        
+        .upload-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .upload-label {
+            display: block;
+            cursor: pointer;
+        }
+        
+        .upload-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        
+        /* 底部版权 */
+        footer {
+            background-color: #f8f9fa;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 60px;
+        }
+        
+        .copyright {
+            color: #666;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <!-- 此处填写 logo -->
+            </div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="about.html">关于我</a>
+                <a href="services.html">核心服务</a>
+                <a href="portfolio.html">案例展示</a>
+                <a href="contact.html">联系方式</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 主体区域 -->
+    <section class="hero">
+        <div class="container">
+            <h1>周茂林</h1>
+            <p>专注亚马逊平台运营·精于Listing优化·助力店铺增长</p>
+            <div class="tagline">深耕亚马逊【5年】，从选品到爆款，全程落地陪跑</div>
+            <a href="contact.html" class="cta-button">行动按钮</a>
+            
+            <!-- 个人简约照上传区域 -->
+            <div class="photo-upload">
+                <div class="upload-container">
+                    <p>点击或拖拽上传个人简约照</p>
+                    <input type="file" class="upload-input" id="photo-upload">
+                    <label for="photo-upload" class="upload-label">
+                        <span class="upload-button">选择文件</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 底部版权 -->
+    <footer>
+        <div class="container">
+            <div class="copyright">©【2026】【周茂林】- 亚马逊运营个人官网 | 专注跨境，诚信服务</div>
+        </div>
+    </footer>
+    
+    <script>
+        // 页面加载时从本地存储读取图片
+        window.onload = function() {
+            const savedPhoto = localStorage.getItem('personalPhoto');
+            if (savedPhoto) {
+                const uploadContainer = document.querySelector('.upload-container');
+                uploadContainer.innerHTML = `
+                    <img src="${savedPhoto}" style="max-width: 200px; max-height: 200px; border-radius: 50%; margin-bottom: 20px;">
+                    <p>图片已上传，可点击重新选择</p>
+                    <input type="file" class="upload-input" id="photo-upload">
+                    <label for="photo-upload" class="upload-label">
+                        <span class="upload-button">重新选择</span>
+                    </label>
+                `;
+                // 重新绑定事件
+                document.getElementById('photo-upload').addEventListener('change', handlePhotoUpload);
+            }
+        };
+        
+        // 图片上传功能
+        function handlePhotoUpload(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const imageData = event.target.result;
+                    // 保存到本地存储
+                    localStorage.setItem('personalPhoto', imageData);
+                    
+                    const uploadContainer = document.querySelector('.upload-container');
+                    uploadContainer.innerHTML = `
+                        <img src="${imageData}" style="max-width: 200px; max-height: 200px; border-radius: 50%; margin-bottom: 20px;">
+                        <p>图片已上传，可点击重新选择</p>
+                        <input type="file" class="upload-input" id="photo-upload">
+                        <label for="photo-upload" class="upload-label">
+                            <span class="upload-button">重新选择</span>
+                        </label>
+                    `;
+                    // 重新绑定事件
+                    document.getElementById('photo-upload').addEventListener('change', handlePhotoUpload);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+        
+        // 初始绑定事件
+        document.getElementById('photo-upload').addEventListener('change', handlePhotoUpload);
+    </script>
+</body>
+</html>
